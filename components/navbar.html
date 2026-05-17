@@ -1,0 +1,30 @@
+<nav>
+  <a class="logo" href="index.html">
+    <div class="logo-icon">
+      <img src="../Club Full Logos/Club Logo NO BG.png" alt="" />
+    </div>
+    AstroClub
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#branches">Branches</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li>
+      <label class="astro-switch" aria-label="Toggle Light/Dark Mode">
+        <input type="checkbox" id="theme-checkbox" onchange="toggleTheme()" />
+        <span class="astro-slider"></span>
+      </label>
+    </li>
+
+    <li><a href="contact.html" class="nav-cta">Join Us</a></li>
+  </ul>
+</nav>
+
+<script>
+  if (document.documentElement.getAttribute("data-theme") === "light") {
+    document.getElementById("theme-icon").textContent = "🌙";
+  }
+</script>
