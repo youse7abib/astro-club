@@ -1,0 +1,67 @@
+<nav>
+  <a class="logo" href="index.html">
+    <div class="logo-icon">
+      <img src="../Club Full Logos/Club Logo NO BG.png" alt="" />
+    </div>
+    AstroClub
+  </a>
+
+  <div class="nav-center">
+    <label class="astro-switch" aria-label="Toggle Light/Dark Mode">
+      <input type="checkbox" id="theme-checkbox" onchange="toggleTheme()" />
+
+      <span class="astro-slider"></span>
+    </label>
+  </div>
+
+  <button
+    class="nav-hamburger"
+    id="nav-hamburger"
+    aria-label="Toggle menu"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+
+    <li><a href="about.html">About</a></li>
+
+    <li class="navbar__dropdown" id="nav-programs">
+      <a
+        href="#programs"
+        class="navbar__dropdown-toggle"
+        id="nav-programs-toggle"
+      >
+        Programs
+
+        <svg
+          class="navbar__dropdown-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+
+      <ul class="navbar__dropdown-menu">
+        <li><a href="">WorkShop</a></li>
+
+        <li><a href="">Cosmic Quest Contest</a></li>
+      </ul>
+    </li>
+
+    <li><a href="index.html#gallery">Gallery</a></li>
+
+    <li><a href="index.html#branches">Branches</a></li>
+
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
