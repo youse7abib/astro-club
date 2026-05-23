@@ -1,4 +1,6 @@
+// =============================================================================
 // Stars Background
+// =============================================================================
 const canvas = document.getElementById("stars-bg");
 if (canvas) {
   const ctx = canvas.getContext("2d");
@@ -7,22 +9,19 @@ if (canvas) {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     stars = Array.from({ length: 250 }, () => ({
-      // Slightly increased the number of stars
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      r: Math.random() * 2.5 + 0.5, // Increased size: radius is now between 1.0 and 3.5
-      o: Math.random() * 0.6 + 0.4, // Increased brightness: opacity is now between 0.4 and 1.0
-      d: (Math.random() - 0.5) * 0.02, // Slightly faster fading effect
+      r: Math.random() * 2.5 + 0.5,
+      o: Math.random() * 0.6 + 0.4,
+      d: (Math.random() - 0.5) * 0.02,
     }));
   }
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Dynamically grab the star color from your CSS variables
-    const rootStyles = getComputedStyle(document.documentElement);
     const starRGB =
-      rootStyles.getPropertyValue("--star-color").trim() || "200, 220, 255";
-
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--star-color")
+        .trim() || "200, 220, 255";
     stars.forEach((s) => {
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
@@ -38,7 +37,9 @@ if (canvas) {
   draw();
 }
 
+// =============================================================================
 // Stats Counter
+// =============================================================================
 const statsSection = document.querySelector(".stats");
 if (statsSection) {
   const targets = [30, 12, 8, 3];
@@ -65,7 +66,9 @@ if (statsSection) {
   obs.observe(statsSection);
 }
 
+// =============================================================================
 // Card Entrance Animation
+// =============================================================================
 const co = new IntersectionObserver(
   (entries) => {
     entries.forEach((e, i) => {
@@ -80,37 +83,120 @@ const co = new IntersectionObserver(
   },
   { threshold: 0.1 },
 );
-document.querySelectorAll(".program-card,.branch-card").forEach((el) => {
+document.querySelectorAll(".program-card, .branch-card").forEach((el) => {
   el.style.opacity = "0";
   el.style.transform = "translateY(28px)";
-  el.style.transition = "opacity .5s ease,transform .5s ease";
+  el.style.transition = "opacity .5s ease, transform .5s ease";
   co.observe(el);
 });
 
-// Smooth scroll for hash links
+// =============================================================================
+// Smooth Scroll
+// =============================================================================
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener("click", (e) => {
-    const targetId = a.getAttribute("href");
-    if (targetId === "#") return; // skip empty hashes
-
-    // Only smooth scroll if the element exists on the current page
-    const t = document.querySelector(targetId);
+    const id = a.getAttribute("href");
+    if (id === "#") return;
+    const t = document.querySelector(id);
     if (t) {
       e.preventDefault();
       t.scrollIntoView({ behavior: "smooth" });
     }
   });
 });
-// --- NAVBAR SHRINK ON SCROLL ---
+
+// =============================================================================
+// Navbar Shrink on Scroll
+// =============================================================================
 window.addEventListener("scroll", () => {
   const nav = document.querySelector("nav");
-  if (nav) {
-    // If the user scrolls down more than 50 pixels, add the shrunk class
-    if (window.scrollY > 50) {
-      nav.classList.add("nav-scrolled");
+  if (nav) nav.classList.toggle("nav-scrolled", window.scrollY > 50);
+});
+
+// =============================================================================
+// Hamburger Menu
+// =============================================================================
+function initHamburger() {
+  const hamburger = document.getElementById("nav-hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const dropdown = document.getElementById("nav-programs");
+  const dropToggle = document.getElementById("nav-programs-toggle");
+
+  if (!hamburger || !navLinks || !dropdown || !dropToggle) return;
+
+  // Sync the drawer's top position to the real nav height
+  function syncDrawerTop() {
+    const nav = document.querySelector("nav");
+    if (nav && window.innerWidth <= 768) {
+      navLinks.style.top = nav.offsetHeight + "px";
     } else {
-      // If they scroll back to the top, remove it to make it large again
-      nav.classList.remove("nav-scrolled");
+      navLinks.style.top = "";
     }
   }
-});
+  syncDrawerTop();
+  window.addEventListener("resize", syncDrawerTop);
+
+  function closeMenu() {
+    navLinks.classList.remove("is-open");
+    hamburger.classList.remove("is-open");
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+
+  // Hamburger toggle
+  hamburger.addEventListener("click", () => {
+    const opening = !navLinks.classList.contains("is-open");
+    syncDrawerTop(); // re-measure in case nav shrank on scroll
+    if (opening) {
+      navLinks.classList.add("is-open");
+
+      hamburger.classList.add("is-open");
+
+      hamburger.setAttribute("aria-expanded", "true");
+    } else {
+      closeMenu();
+    }
+  });
+
+  // Programs: accordion on mobile, hover on desktop (CSS handles desktop)
+  dropToggle.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdown.classList.toggle("is-open");
+    }
+  });
+
+  // Close when any regular link is tapped
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (link === dropToggle && window.innerWidth <= 768) return;
+      closeMenu();
+    });
+  });
+
+  // Reset on resize to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      closeMenu();
+      dropdown.classList.remove("is-open");
+    }
+  });
+}
+
+// Wait for components.js to inject the navbar, then init
+const placeholder = document.getElementById("navbar-placeholder");
+if (placeholder) {
+  if (document.getElementById("nav-hamburger")) {
+    initHamburger();
+  } else {
+    const mo = new MutationObserver(() => {
+      if (document.getElementById("nav-hamburger")) {
+        mo.disconnect();
+        initHamburger();
+      }
+    });
+    mo.observe(placeholder, { childList: true, subtree: true });
+  }
+} else {
+  initHamburger();
+}
