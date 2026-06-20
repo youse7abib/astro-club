@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact OCT Astronomy Club" />
+    <title>Contact Us – OCT Astronomy Club</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+
+    <canvas id="stars-bg"></canvas>
+
+    <div id="navbar-placeholder"></div>
+
+    <section id="contact" style="padding-top: 10rem; min-height: 100vh">
+      <div style="max-width: 1200px; margin: 0 auto">
+        <div class="section-tag">Get in Touch</div>
+        <h2 class="section-title">Join the Mission</h2>
+        <p class="section-subtitle">
+          Whether you want to join the club, ask a question, or collaborate on
+          an event, we'd love to hear from you.
+        </p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Location</strong>
+              <p>
+                October STEM School<br />6th of October City<br />Giza, Egypt
+              </p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <strong>Email</strong>
+              <p>hello@octastro.club</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕒</div>
+            <div>
+              <strong>Meeting Times</strong>
+              <p>
+                Thursdays: 4:00 PM - 6:00 PM<br />Observation Nights: Subject to
+                weather/lunar phases
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form
+            onsubmit="
+              event.preventDefault();
+              alert('Message sent successfully! (This is a demo)');
+            "
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>I'm interested in...</label>
+              <select>
+                
+                <option>General Inquiry</option>
+                <option>Event Collaboration</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea
+                placeholder="Tell us how we can help..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/loading.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

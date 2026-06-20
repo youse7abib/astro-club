@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/theme.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="OCT Astronomy Club – October STEM School"
+    />
+    <title>OCT Astronomy Club – Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+/>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+
+    <canvas id="stars-bg"></canvas>
+
+    <canvas id="stars-bg-body"></canvas>
+
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          ⭐ October STEM School &nbsp;·&nbsp; Giza, Egypt
+        </div>
+        <h1>
+          Explore the <span class="gradient">Universe</span><br />Together
+        </h1>
+        <p>
+          The official astronomy club of October STEM School, 
+          advancing astronomy through education, observation, and community engagement.
+        </p>
+        <div class="hero-btns">
+          <a href="join.html" class="btn-primary">Join the Club</a>
+          <a href="" class="btn-secondary">Our Programs →</a>
+        </div>
+      </div>
+      <div class="hero-scroll">Scroll</div>
+    </section>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num" id="s1">0+</div>
+        <div class="stat-label">Active Members</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="s2">0+</div>
+        <div class="stat-label"> Sessions per season</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="s3">0+</div>
+        <div class="stat-label">Events Held</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="s4">0+</div>
+        <div class="stat-label">Expert Mentors</div>
+      </div>
+    </div>
+
+    <div class="ticker-wrap">
+      <div class="ticker-inner">
+        <div class="ticker-item">
+          <span>🌟</span>Sunlight takes 8 minutes to reach Earth
+        </div>
+        <div class="ticker-item">
+          <span>🪐</span>Saturn's rings are mostly ice and rock
+        </div>
+        <div class="ticker-item">
+          <span>🌌</span>The Milky Way has over 200 billion stars
+        </div>
+        <div class="ticker-item">
+          <span>🌙</span>The Moon moves 3.8 cm farther away each year
+        </div>
+        <div class="ticker-item">
+          <span>⭐</span>A neutron star can spin 600 times per second
+        </div>
+        <div class="ticker-item">
+          <span>🔭</span>The observable universe spans 93 billion light-years
+        </div>
+        <div class="ticker-item">
+          <span>☀️</span>The Sun is 99.86% of the solar system's mass
+        </div>
+        <div class="ticker-item">
+          <span>🌟</span>Sunlight takes 8 minutes to reach Earth
+        </div>
+        <div class="ticker-item">
+          <span>🪐</span>Saturn's rings are mostly ice and rock
+        </div>
+        <div class="ticker-item">
+          <span>🌌</span>The Milky Way has over 200 billion stars
+        </div>
+        <div class="ticker-item">
+          <span>🌙</span>The Moon moves 3.8 cm farther away each year
+        </div>
+        <div class="ticker-item">
+          <span>⭐</span>A neutron star can spin 600 times per second
+        </div>
+        <div class="ticker-item">
+          <span>🔭</span>The observable universe spans 93 billion light-years
+        </div>
+        <div class="ticker-item">
+          <span>☀️</span>The Sun is 99.86% of the solar system's mass
+        </div>
+      </div>
+    </div>
+
+
+    <!-- _____________________________________________________________
+    STEM OCTOBER SECTION 
+    -->
+    <section class="octSchool">
+      <div class="octSchoolAbout">
+        <h4 style="
+          color: var(--accent)
+          ">Who we are</h4>
+        <h1>The Official Astronomy Club of October STEM School</h1>
+        <p>
+          As a student-run club affiliated with 
+          <span><a href="stemegypt.net">STEM High School for Boys – 6th of October, </a></span>
+          we provide physics training, host competitions, and publish academic materials for high schoolers from all around the world.
+        </p>
+        <p><a href="about.html">Learn More</a></p>
+      </div>
+      <div class="octSchoolImg">
+        <img src="/images/octLogo2.jpeg">
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     GALLERY SECTION — tabbed with sliding panels
+════════════════════════════════════════════════════════════════ -->
+    <section id="gallery">
+      <!-- header -->
+      <div style="max-width: 1200px; margin: 0 auto 2.5rem">
+        <div class="section-tag">Our Sessions</div>
+        <h2 class="section-title">In the Field</h2>
+        <p class="section-subtitle">
+          Switch between our hands-on club activities and the photos our members
+          have captured of the night sky.
+        </p>
+      </div>
+
+      <!-- tab switcher -->
+      <div class="gallery-tabs" style="max-width: 1200px; margin: 0 auto 2rem">
+        <button class="gtab active" data-tab="workshops">
+          <span class="gtab-icon">🔭</span> Events
+        </button>
+        <button class="gtab" data-tab="astrophoto">
+          <span class="gtab-icon">📸</span> Astrophotography
+        </button>
+        <!-- sliding indicator -->
+        <div class="gtab-indicator"></div>
+      </div>
+
+      <!-- panels viewport (clips the sliding panels) -->
+      <div class="gallery-viewport">
+        <!-- panel 1: workshops -->
+        <div class="gallery-panel active" id="panel-workshops">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <div
+                class="g-img"
+                style="background: linear-gradient(135deg, #0a1528, #111e33)"
+              >
+                <img src="images/sunset-clean.png" alt="Ramadan Crescent Detection" />
+              </div>
+              <div class="g-overlay">
+                <span>🌙 Ramadan Crescent Detection</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div
+                class="g-img"
+                style="background: linear-gradient(135deg, #111e33, #1a0a2e)"
+              >
+                <img
+                  src="images/Field session.jpg"
+                  alt="learning telescope mechanism"
+                />
+              </div>
+              <div class="g-overlay">
+                <span>🔭 Learning Telescope Mechanism Session</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div
+                class="g-img"
+                style="background: linear-gradient(135deg, #0a1528, #0d2044)"
+              >
+                <img
+                  src="images/sunset2.png"
+                  alt="Rooftop Observation Session at Sunset"
+                />
+              </div>
+              <div class="g-overlay">
+                <span>🌇 Rooftop Observation Session at Sunset</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div
+                class="g-img"
+                style="background: linear-gradient(135deg, #111e33, #0a1528)"
+              >
+                <img
+                  src="images/Astro session.jpg"
+                  alt="Club Members Night Session"
+                />
+              </div>
+              <div class="g-overlay">
+                <span>🌕 Full Moon Observation Session</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div
+                class="g-img"
+                style="background: linear-gradient(135deg, #1a0a2e, #0a1528)"
+              >
+                <img src="images/stargazing.jpg" alt="Red moon" />
+              </div>
+              <div class="g-overlay">
+                <span>📍 Red Moon Observation Session</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- panel 2: astrophotography -->
+        <div class="gallery-panel" id="panel-astrophoto">
+          <div class="gallery-grid astrophoto-grid">
+            <div class="gallery-item">
+              <div
+                class="g-img"
+                style="background: linear-gradient(135deg, #050a14, #0a1020)"
+              >
+                <img src="images/moonSurface2.jpeg" alt="..."/>
+              </div>
+              <div class="g-overlay">
+                <span> Lunar Surface</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div
+                class="g-img"
+                style="background: linear-gradient(135deg, #08101e, #050a14)"
+              >
+                <img src="images/MilkyWay.jpeg" />
+              </div>
+              <div class="g-overlay">
+                <span> Milky Way Galaxy</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div
+                class="g-img"
+                style="background: linear-gradient(135deg, #050a14, #0d0820)"
+              >
+                <img src="images/jupiter.jpeg" />
+              </div>
+              <div class="g-overlay">
+                <span> Jupiter</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div
+                class="g-img"
+                style="background: linear-gradient(135deg, #080f1e, #050a14)"
+              >
+                <img src="images/saturn.jpeg" />
+              </div>
+              <div class="g-overlay">
+                <span>Saturn</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <div
+                class="g-img"
+                style="background: linear-gradient(135deg, #050a14, #0a1528)"
+              >
+                <img src="images/lunar eclipse-clean.png" />
+              </div>
+              <div class="g-overlay">
+                <span> Lunar Eclipse</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /gallery-viewport -->
+    </section>
+
+    <section id="branches" class="branches-bg">
+      <div style="max-width: 1200px; margin: 0 auto 0">
+        <div class="section-tag">Specializations</div>
+        <h2 class="section-title">Our Branches</h2>
+        <p class="section-subtitle">
+          Dive deep into a specific area of astronomical science with one of our
+          specialized sub-groups.
+        </p>
+      </div>
+      <div class="branches-grid">
+        <div class="branch-card">
+          <div class="branch-num">01</div>
+          <h3>Observational Astronomy</h3>
+          <p>
+            Hands-on telescope work, planet tracking, and lunar surface mapping
+            sessions for all experience levels.
+          </p>
+        </div>
+        <div class="branch-card">
+          <div class="branch-num">02</div>
+          <h3>Celestial Mechanics</h3>
+          <p>
+            Orbital dynamics, eclipses, and the mathematical models behind
+            planetary and lunar motion.
+          </p>
+        </div>
+        <div class="branch-card">
+          <div class="branch-num">03</div>
+          <h3>Astrophotography</h3>
+          <p>
+            Camera setups, long-exposure techniques, and image processing for
+            stunning night-sky photography.
+          </p>
+        </div>
+        <div class="branch-card">
+          <div class="branch-num">04</div>
+          <h3>Islamic Astronomy</h3>
+          <p>
+            Crescent moon sighting, the Islamic lunar calendar, and the rich
+            heritage of Arab astronomers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-inner">
+        <div class="section-tag" style="justify-content: center">
+          Ready to Explore?
+        </div>
+        <h2>The Universe Is Waiting For You</h2>
+        <p>
+          Join a community of curious minds at October STEM School who look up
+          and ask why. All experience levels are welcome we will teach you
+          everything you need to know.
+        </p>
+        <div class="cta-btns">
+          <a href="join.html" class="btn-primary">Join the Club</a>
+          <a href="about.html" class="btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/loading.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/conters.js"></script>
+  </body>
+</html>

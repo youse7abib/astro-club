@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact OCT Astronomy Club" />
+    <title>Contact Us – OCT Astronomy Club</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+
+    <canvas id="stars-bg"></canvas>
+
+    <div id="navbar-placeholder"></div>
+
+    <section class="join-page" style="padding-top: 10rem; min-height: 100vh">
+      <div style="max-width: 1200px; margin: 0 auto">
+        <div class="section-tag">Get in Touch</div>
+        <h1 class="section-title">Join the Astronomy Club</h1>
+        <p class="section-subtitle">
+          Become part of October STEM School's most passionate scientific community. Research, compete, discover, and grow alongside the next generation of astro. 
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 class="info-title">What You Get as a Member</h3>
+
+          <div class="join-card">
+            <div class="join-card__icon">🎓</div>
+            <div class="join-card__content">
+              <strong>Expert Mentorship</strong>
+              <p>Direct access to 5+ mentors across all astronomy fields, supporting your academic and professional growth.</p>
+            </div>
+          </div>
+
+          <div class="join-card">
+            <div class="join-card__icon">🌌</div>
+            <div class="join-card__content">
+              <strong>Cosmic Competition</strong>
+              <p>Represent your school in our free national astronomy competition with prizes, recognition and scholarships.</p>
+            </div>
+          </div>
+
+          <div class="join-card">
+            <div class="join-card__icon">🔭</div>
+            <div class="join-card__content">
+              <strong>Workshops</strong>
+              <p>
+                You can discover the sunset in 
+                <span><a href="index.html#gallery" class="inline-link">ramadan</a></span> season.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <div class="closed-badge">
+            <span class="closed-icon">⚠️</span>
+            <span>Applications are currently closed</span>
+          </div>
+
+          <form onsubmit="event.preventDefault();">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="John" disabled />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe" disabled />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="john@example.com" disabled />
+            </div>
+
+            <div class="form-group">
+              <label>I'm interested in...</label>
+              <select disabled>
+                <option>Joining the Club</option>
+                <option>General Inquiry</option>
+                <option>Event Collaboration</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell us how we can help..." disabled></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-disabled" style="width: 100%" disabled>
+              Submissions Closed
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/loading.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
