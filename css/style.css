@@ -96,9 +96,11 @@
 }
 
 [data-theme="light"] .astro-slider::after {
-  content: "☁️";
-  right: 36px;
-  font-size: 12px;
+  content: "Light";
+  right: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
   opacity: 0.9;
 }
 
@@ -583,12 +585,15 @@ nav.nav-scrolled .logo {
 }
 
 .astro-slider::after {
-  content: "✨";
+  content: "Dark";
   position: absolute;
   right: 8px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(200, 220, 255, 0.7);
+  letter-spacing: 0.02em;
   transition: 0.4s;
 }
 
@@ -2249,14 +2254,15 @@ footer {
     z-index: 999;
   }
   .nav-center {
-    position: absolute;
+    position: relative;
 
-    left: 50%;
-    top: 50%;
+    left: auto;
+    top: auto;
 
-    transform: translate(-50%, -50%);
+    transform: none;
 
-    margin: 0;
+    margin-left: auto;
+    margin-right: 0.5rem;
 
     z-index: 50;
   }
@@ -2270,13 +2276,8 @@ footer {
 }
 .nav-center {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  order: 3;
-
   margin-left: 2rem;
 }
 nav {
