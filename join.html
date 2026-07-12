@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Join OCT Astronomy Club" />
+    <title>Join Us – OCT Astronomy Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/theme.js"></script>
+  </head>
+  <body>
+
+    <canvas id="stars-bg"></canvas>
+
+    <div id="navbar-placeholder"></div>
+
+    <section class="join-page" style="padding-top: 10rem; min-height: 100vh">
+      <div style="max-width: 700px; margin: 0 auto; padding: 0 1.5rem;">
+        <div class="section-tag" style="justify-content: center;">Get in Touch</div>
+        <h1 class="section-title" style="text-align: center;">Join the Astronomy Club</h1>
+        <p class="section-subtitle" style="text-align: center; margin-left: auto; margin-right: auto;">
+          Become part of October STEM School's most passionate scientific community. Research, compete, discover, and grow alongside the next generation of astronomers.
+        </p>
+
+        <div class="contact-form" style="margin-top: 3rem; padding: 2.5rem; border-radius: 20px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); backdrop-filter: blur(12px);">
+          <div class="closed-badge" style="margin-bottom: 2rem;">
+            <span class="closed-icon">⚠️</span>
+            <span>Applications are currently closed</span>
+          </div>
+
+          <form onsubmit="event.preventDefault();" style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="John" disabled />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe" disabled />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="john@example.com" disabled />
+            </div>
+
+            <div class="form-group">
+              <label>I'm interested in...</label>
+              <select disabled>
+                <option>Joining the Club</option>
+                <option>General Inquiry</option>
+                <option>Event Collaboration</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell us how we can help..." disabled style="min-height: 120px;"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-disabled" style="width: 100%; padding: 0.9rem; font-size: 1rem; margin-top: 0.5rem;" disabled>
+              Submissions Closed
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

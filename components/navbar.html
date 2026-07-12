@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NavBar</title>
+  </head>
+  <body>
+    <nav>
+      <a class="logo" href="index.html">
+        <div>
+          <img src="images/Club_Logo_Black_BG-removebg-preview.png" alt="Astronomy Club Logo" />
+        </div>
+        Astronomy Club
+      </a>
+
+      <div class="nav-buttons">
+        <a
+          href="https://astravale.stemastronomyclub.org/"
+          class="nav-btn nav-btn-donate btn-primary"
+          aria-label="AstraVale"
+        >
+          <img
+            src="Club Full Logos/astravale_black_without_bg.png"
+            style="width: 30px; height: 30px; object-fit: contain"
+          />
+          AstraVale
+        </a>
+        <a href="https://gaac.stemastronomyclub.org/"
+          class="nav-btn nav-btn-gaac btn-primary" aria-label="GAAC">
+          <img
+            src="Club Full Logos/gaac_black_without_bg.png"
+            style="width: 30px; height: 30px; object-fit: contain"
+          />
+          GAAC
+        </a>
+      </div>
+
+      <div class="nav-center">
+        <label class="astro-switch" aria-label="Toggle Light/Dark Mode">
+          <input type="checkbox" id="theme-checkbox" onchange="toggleTheme()" />
+          <span class="astro-slider"></span>
+        </label>
+      </div>
+
+      <button
+        class="nav-hamburger"
+        id="nav-hamburger"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="navbar__dropdown" id="nav-programs">
+          <a class="navbar__dropdown-toggle" id="nav-programs-toggle">
+            About
+            <svg
+              class="navbar__dropdown-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+
+          <ul class="navbar__dropdown-menu">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="partener.html">Partners</a></li>
+            <li><a href="join.html">Join the Club</a></li>
+          </ul>
+        </li>
+
+        <li><a href="https://gaac.stemastronomyclub.org/" target="_blank">GAAC</a></li>
+
+        <li><a href="index.html#gallery">Gallery</a></li>
+
+        <li><a href="donate.html">Donate</a></li>
+        <li class="mobile-only">
+          <a href="https://astravale.stemastronomyclub.org/"> AstraVale </a>
+        </li>
+
+        <li class="mobile-only">
+          <a href="https://gaac.stemastronomyclub.org/"> GAAC </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
