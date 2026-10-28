@@ -275,7 +275,7 @@ if (canvasBody) {
 // =============================================================================
 const statsSection = document.querySelector(".stats");
 if (statsSection) {
-  const targets = [105, 34, 5, 6];
+  const targets = [105, 24, 5, 6];
   const ids = ["s1", "s2", "s3", "s4"];
   let done = false;
   const obs = new IntersectionObserver(
